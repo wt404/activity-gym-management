@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Member;
 use Illuminate\Http\Request;
 
 class MemberController extends Controller
 {
     public function index(Request $request)
     {
-        // TODO: Display all members
-        return view('index');
+        $members = Member::all();
+        return view('index')->with('members', $members);
     }
 
     public function create(Request $request)

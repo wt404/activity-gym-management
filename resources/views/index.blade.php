@@ -20,12 +20,13 @@
                     </tr>
                 </thead>
                 <tbody>
+                    @foreach ($members as $member)
                     <tr>
-                        <th scope="row">0</th>
-                        <td>Jason</td>
-                        <td>jason@gmail.com</td>
-                        <td>type</td>
-                        <td>expiration</td>
+                        <th scope="row">{{ $member->id }}</th>
+                        <td>{{ $member->name }}</td>
+                        <td>{{ $member->email }}</td>
+                        <td>{{ $member->membership_type }}</td>
+                        <td>{{ $member->membership_expiration }}</td>
                         <td>
                             <div class="d-flex gap-2">
                                 <a href="#" class="btn btn-primary">Edit</a>
@@ -33,6 +34,7 @@
                             </div>
                         </td>
                     </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>
