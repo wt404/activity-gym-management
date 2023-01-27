@@ -27,7 +27,6 @@ class MemberController extends Controller
 
     public function store(Request $request)
     {
-
         $validated = $request->validate([
             'name' => 'required|max:255',
             'email' => 'required|unique:members|max:255',
@@ -62,10 +61,15 @@ class MemberController extends Controller
 
     public function update(Request $request)
     {
+        $validated = $request->validate([
+            'name' => 'required|max:255',
+            'email' => 'required|unique:members|max:255',
+        ]);
+
         $member = Member::findOrFail($request->id);
         $member->name = $request->name;
-        $member->email = $request->email;
-        $member->membership_type = $request->membership_type;
+        $member->trainer_id = $request->trainer_id;
+        $member->membership_id = $request->membership_id;
         $member->save();
         return redirect()->route('member.show', $member->id)->with('success', 'Updated member successfully');
     }
