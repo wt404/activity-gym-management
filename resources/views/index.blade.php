@@ -7,6 +7,11 @@
                 Members
             </h1>
         </div>
+        @if (session('success'))
+            <div class="mb-3 alert alert-success" role="alert">
+                {{ session('success') }}
+            </div>
+        @endif
         <div class="overflow-auto">
             <table class="table table-light table-striped">
                 <thead>
