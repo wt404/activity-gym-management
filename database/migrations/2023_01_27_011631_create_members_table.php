@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('membership_type');
             $table->date('membership_expiration');
+            $table->foreignId('trainer_id')->constrained();
             $table->timestamps();
         });
     }
