@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Member;
+use DateTime;
 use Illuminate\Http\Request;
 
 class MemberController extends Controller
@@ -20,7 +21,13 @@ class MemberController extends Controller
 
     public function store(Request $request)
     {
-        // TODO: Store new member
+        $member = new Member;
+        $member->name = $request->name;
+        $member->email = $request->email;
+        $member->membership_type = $request->membership_type;
+        $member->membership_expiration = new DateTime();
+        $member->save();
+        return redirect()->route('member.index')->with('success', 'New member added');
     }
 
     public function show(Request $request)
