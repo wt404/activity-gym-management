@@ -34,7 +34,7 @@
                             <th scope="row">{{ $member->id }}</th>
                             <td>{{ $member->name }}</td>
                             <td>{{ $member->email }}</td>
-                            <td>{{ $member->membership_type }}</td>
+                            <td>{{ $member->membership->membership_type }}</td>
                             <td>{{ $member->membership_expiration }}</td>
                             <td>
                                 <div class="d-flex gap-2">
