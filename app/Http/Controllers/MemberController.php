@@ -32,7 +32,8 @@ class MemberController extends Controller
 
     public function show(Request $request)
     {
-        // TODO: Return member by id
+        $member = Member::findOrFail($request->id);
+        return view('show')->with('member', $member);
     }
 
     public function update(Request $request)
