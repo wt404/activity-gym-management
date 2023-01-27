@@ -63,7 +63,6 @@ class MemberController extends Controller
     {
         $validated = $request->validate([
             'name' => 'required|max:255',
-            'email' => 'required|unique:members|max:255',
         ]);
 
         $member = Member::findOrFail($request->id);
