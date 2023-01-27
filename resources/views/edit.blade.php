@@ -10,6 +10,15 @@
                 <a href={{ route('member.show', $member->id) }} class="btn btn-light">Go Back</a>
             </div>
         </div>
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         <div>
             <div class="card text-black">
                 <div class="card-body">
