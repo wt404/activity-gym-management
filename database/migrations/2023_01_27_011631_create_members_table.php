@@ -17,7 +17,6 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
-            $table->string('membership_type');
             $table->date('membership_expiration');
             $table->foreignId('trainer_id')->constrained();
             $table->foreignId('membership_id')->constrained();
