@@ -9,6 +9,7 @@ class MemberController extends Controller
     public function index(Request $request)
     {
         // TODO: Display all members
+        return view('index');
     }
 
     public function create(Request $request)
