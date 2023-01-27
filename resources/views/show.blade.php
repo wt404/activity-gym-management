@@ -33,6 +33,9 @@
                     <p>
                         Trainer: <a href={{ route('member.trainer', $member->id) }}>{{ $member->trainer->name }}</a>
                     </p>
+                    <p>
+                        Membership Type: <a href={{ route('member.membership', $member->id) }}>{{ $member->membership->membership_type }}</a>
+                    </p>
                     <a href={{ route('member.edit', $member->id) }} class="btn btn-primary">Edit</a>
                 </div>
             </div>
