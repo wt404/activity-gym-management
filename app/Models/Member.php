@@ -15,4 +15,9 @@ class Member extends Model
         'membership_type',
         'membership_expiration',
     ];
+
+    public function trainer()
+    {
+        return $this->hasOne(Trainer::class);
+    }
 }

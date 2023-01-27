@@ -15,4 +15,9 @@ class Trainer extends Model
         'specialization',
         'phone',
     ];
+
+    public function member()
+    {
+        return $this->belongsTo(Member::class);
+    }
 }
