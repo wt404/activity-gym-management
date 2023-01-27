@@ -16,8 +16,8 @@ class Trainer extends Model
         'phone',
     ];
 
-    public function member()
+    public function members()
     {
-        return $this->hasOne(Member::class);
+        return $this->hasMany(Member::class);
     }
 }
