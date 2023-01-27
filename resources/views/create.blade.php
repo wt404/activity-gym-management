@@ -13,7 +13,7 @@
         <div>
             <div class="card text-black">
                 <div class="card-body">
-                    <form action={{ route('member.store' )}} method="POST">
+                    <form action={{ route('member.store') }} method="POST">
                         @csrf
                         <div class="mb-3">
                             <label for="name" class="form-label">
