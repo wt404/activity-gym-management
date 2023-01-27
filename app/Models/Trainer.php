@@ -18,6 +18,6 @@ class Trainer extends Model
 
     public function member()
     {
-        return $this->belongsTo(Member::class);
+        return $this->hasOne(Member::class);
     }
 }

@@ -18,6 +18,6 @@ class Member extends Model
 
     public function trainer()
     {
-        return $this->hasOne(Trainer::class);
+        return $this->belongsTo(Trainer::class);
     }
 }
