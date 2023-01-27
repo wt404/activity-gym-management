@@ -25,6 +25,7 @@
                     <p>
                         Membership Expiration: {{ $member->membership_expiration }}
                     </p>
+                    <a href={{ route('member.edit', $member->id) }} class="btn btn-primary">Edit</a>
                 </div>
             </div>
         </div>
