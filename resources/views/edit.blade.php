@@ -22,7 +22,7 @@
         <div>
             <div class="card text-black">
                 <div class="card-body">
-                    <form action={{ route('member.update', $member->id )}} method="POST">
+                    <form action={{ route('member.update', $member->id) }} method="POST">
                         @csrf
                         <div class="mb-3">
                             <label for="name" class="form-label">

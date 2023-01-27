@@ -31,7 +31,6 @@ class MemberController extends Controller
             'name' => 'required|max:255',
             'email' => 'required|unique:members|max:255',
         ]);
-
         $member = new Member;
         $member->name = $request->name;
         $member->email = $request->email;
@@ -50,9 +49,9 @@ class MemberController extends Controller
 
     public function edit(Request $request)
     {
+        $member = Member::findOrFail($request->id);
         $trainers = Trainer::all();
         $memberships = Membership::all();
-        $member = Member::findOrFail($request->id);
         return view('edit')
             ->with('member', $member)
             ->with('trainers', $trainers)
@@ -64,7 +63,6 @@ class MemberController extends Controller
         $validated = $request->validate([
             'name' => 'required|max:255',
         ]);
-
         $member = Member::findOrFail($request->id);
         $member->name = $request->name;
         $member->trainer_id = $request->trainer_id;
