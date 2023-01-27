@@ -27,6 +27,12 @@ class MemberController extends Controller
 
     public function store(Request $request)
     {
+
+        $validated = $request->validate([
+            'name' => 'required|max:255',
+            'email' => 'required|unique:members|max:255',
+        ]);
+
         $member = new Member;
         $member->name = $request->name;
         $member->email = $request->email;
