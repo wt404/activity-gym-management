@@ -33,7 +33,7 @@
                             </label>
                             <select class="form-select" name="membership_id">
                                 @foreach ($memberships as $membership)
-                                    <option selected={{ $member->membership_id == $membership->id }} value="{{ $membership->id }}">{{ $membership->membership_type }} - {{ $membership->membership_price }}</option>
+                                    <option selected="{{ $member->membership_id == $membership->id }}" value="{{ $membership->id }}">{{ $membership->membership_type }} - {{ $membership->membership_price }}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -43,7 +43,7 @@
                             </label>
                             <select class="form-select" name="trainer_id">
                                 @foreach ($trainers as $trainer)
-                                    <option selected={{ $member->trainer_id == $trainer->id }} value="{{ $trainer->id }}">{{ $trainer->name }} - {{ $trainer->specialization }}</option>
+                                    <option selected="{{ $member->trainer_id == $trainer->id }}" value="{{ $trainer->id }}">{{ $trainer->name }} - {{ $trainer->specialization }}</option>
                                 @endforeach
                             </select>
                         </div>
