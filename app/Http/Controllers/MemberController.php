@@ -62,6 +62,6 @@ class MemberController extends Controller
     public function showTrainer(Request $request)
     {
         $member = Member::findOrFail($request->id);
-        return view('trainer')->with('trainer', $member->trainer);
+        return view('trainer')->with('member', $member);
     }
 }
