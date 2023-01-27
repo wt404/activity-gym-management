@@ -15,7 +15,7 @@ class MemberController extends Controller
 
     public function create(Request $request)
     {
-        // TODO: Return view -> create
+        return view('create');
     }
 
     public function store(Request $request)
