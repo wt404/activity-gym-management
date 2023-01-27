@@ -2,10 +2,13 @@
 
 @section('content')
     <div class="pt-5">
-        <div>
+        <div class="mb-3 d-flex justify-content-between align-items-center">
             <h1>
                 Members
             </h1>
+            <div>
+                <a href={{ route('member.create') }} class="btn btn-primary">Create Member</a>
+            </div>
         </div>
         @if (session('success'))
             <div class="mb-3 alert alert-success" role="alert">
