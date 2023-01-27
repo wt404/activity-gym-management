@@ -26,6 +26,7 @@ class MemberController extends Controller
         $member->email = $request->email;
         $member->membership_type = $request->membership_type;
         $member->membership_expiration = new DateTime();
+        $member->trainer_id = $request->trainer_id;
         $member->save();
         return redirect()->route('member.index')->with('success', 'New member added');
     }

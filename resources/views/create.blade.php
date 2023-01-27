@@ -33,6 +33,12 @@
                             </label>
                             <input type="text" class="form-control" id="membership_type" name="membership_type">
                         </div>
+                        <div class="mb-3">
+                            <label for="trainer" class="form-label">
+                                Trainer
+                            </label>
+                            <input type="text" class="form-control" id="trainer" name="trainer_id">
+                        </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
                 </div>
