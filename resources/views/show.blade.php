@@ -10,6 +10,11 @@
                 <a href={{ route('member.index') }} class="btn btn-light">Go Back</a>
             </div>
         </div>
+        @if (session('success'))
+            <div class="mb-3 alert alert-success" role="alert">
+                {{ session('success') }}
+            </div>
+        @endif
         <div>
             <div class="card text-black">
                 <div class="card-body">
