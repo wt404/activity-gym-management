@@ -54,6 +54,8 @@ class MemberController extends Controller
 
     public function destroy(Request $request)
     {
-        // TODO: Delete member by id
+        $member = Member::findOrFail($request->id);
+        $member->delete();
+        return redirect()->route('member.index', $member->id)->with('success', 'Member deleted successfully');
     }
 }

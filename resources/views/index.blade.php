@@ -38,7 +38,10 @@
                         <td>
                             <div class="d-flex gap-2">
                                 <a href={{ route('member.show', $member->id) }} class="btn btn-primary">View</a>
-                                <a href="#" class="btn btn-danger">Delete</a>
+                                <form action={{ route('member.destroy', $member->id) }} method="POST">
+                                    @csrf
+                                    <button class="btn btn-danger">Delete</button>
+                                </form>
                             </div>
                         </td>
                     </tr>
