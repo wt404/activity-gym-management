@@ -36,6 +36,12 @@ class MemberController extends Controller
         return view('show')->with('member', $member);
     }
 
+    public function edit(Request $request)
+    {
+        $member = Member::findOrFail($request->id);
+        return view('edit')->with('member', $member);
+    }
+
     public function update(Request $request)
     {
         // TODO: Update member by id
