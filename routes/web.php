@@ -21,3 +21,5 @@ Route::get('/{id}', [MemberController::class, 'show'])->name('member.show');
 Route::get('/{id}/edit', [MemberController::class, 'edit'])->name('member.edit');
 Route::post('/{id}', [MemberController::class, 'update'])->name('member.update');
 Route::post('/{id}/destroy', [MemberController::class, 'destroy'])->name('member.destroy');
+
+Route::get('/{id}/trainer', [MemberController::class, 'showTrainer'])->name('member.trainer');
