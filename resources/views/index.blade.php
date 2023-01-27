@@ -28,24 +28,32 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($members as $member)
-                    <tr>
-                        <th scope="row">{{ $member->id }}</th>
-                        <td>{{ $member->name }}</td>
-                        <td>{{ $member->email }}</td>
-                        <td>{{ $member->membership_type }}</td>
-                        <td>{{ $member->membership_expiration }}</td>
-                        <td>
-                            <div class="d-flex gap-2">
-                                <a href={{ route('member.show', $member->id) }} class="btn btn-primary">View</a>
-                                <form action={{ route('member.destroy', $member->id) }} method="POST">
-                                    @csrf
-                                    <button class="btn btn-danger">Delete</button>
-                                </form>
-                            </div>
-                        </td>
-                    </tr>
-                    @endforeach
+                    @if(count($members) > 0)
+                        @foreach ($members as $member)
+                        <tr>
+                            <th scope="row">{{ $member->id }}</th>
+                            <td>{{ $member->name }}</td>
+                            <td>{{ $member->email }}</td>
+                            <td>{{ $member->membership_type }}</td>
+                            <td>{{ $member->membership_expiration }}</td>
+                            <td>
+                                <div class="d-flex gap-2">
+                                    <a href={{ route('member.show', $member->id) }} class="btn btn-primary">View</a>
+                                    <form action={{ route('member.destroy', $member->id) }} method="POST">
+                                        @csrf
+                                        <button class="btn btn-danger">Delete</button>
+                                    </form>
+                                </div>
+                            </td>
+                        </tr>
+                        @endforeach
+                    @else
+                        <tr>
+                            <td colspan="6" class="text-center">
+                                No member available
+                            </td>
+                        </tr>
+                    @endif
                 </tbody>
             </table>
         </div>
