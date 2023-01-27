@@ -20,4 +20,9 @@ class Member extends Model
     {
         return $this->belongsTo(Trainer::class);
     }
+
+    public function membership()
+    {
+        return $this->belongsTo(Membership::class);
+    }
 }

@@ -14,4 +14,8 @@ class Membership extends Model
         'membership_price',
     ];
 
+    public function member()
+    {
+        return $this->hasMany(Member::class);
+    }
 }
