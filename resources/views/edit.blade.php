@@ -19,19 +19,19 @@
                             <label for="name" class="form-label">
                                 Name
                             </label>
-                            <input type="text" class="form-control" id="name" name="name" value={{ $member->name }}>
+                            <input type="text" class="form-control" id="name" name="name" value="{{ $member->name }}">
                         </div>
                         <div class="mb-3">
                             <label for="email" class="form-label">
                                 Email
                             </label>
-                            <input type="email" class="form-control" id="email" name="email" value={{ $member->email }}>
+                            <input type="email" class="form-control" id="email" name="email" value="{{ $member->email }}">
                         </div>
                         <div class="mb-3">
                             <label for="membership_type" class="form-label">
                                 Membership Type
                             </label>
-                            <input type="text" class="form-control" id="membership_type" name="membership_type" value={{ $member->membership_type }}>
+                            <input type="text" class="form-control" id="membership_type" name="membership_type" value="{{ $member->membership_type }}">
                         </div>
                         <button type="submit" class="btn btn-primary">Update</button>
                     </form>
