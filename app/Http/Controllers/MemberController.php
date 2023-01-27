@@ -44,7 +44,12 @@ class MemberController extends Controller
 
     public function update(Request $request)
     {
-        // TODO: Update member by id
+        $member = Member::findOrFail($request->id);
+        $member->name = $request->name;
+        $member->email = $request->email;
+        $member->membership_type = $request->membership_type;
+        $member->save();
+        return redirect()->route('member.show', $member->id)->with('success', 'Updated member successfully');
     }
 
     public function destroy(Request $request)
