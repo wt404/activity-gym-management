@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('membership_type');
             $table->date('membership_expiration');
             $table->foreignId('trainer_id')->constrained();
+            $table->foreignId('membership_id')->constrained();
             $table->timestamps();
         });
     }
