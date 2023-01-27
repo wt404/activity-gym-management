@@ -30,6 +30,9 @@
                     <p>
                         Membership Expiration: {{ $member->membership_expiration }}
                     </p>
+                    <p>
+                        Trainer: <a href={{ route('member.trainer', $member->id) }}>{{ $member->trainer->name }}</a>
+                    </p>
                     <a href={{ route('member.edit', $member->id) }} class="btn btn-primary">Edit</a>
                 </div>
             </div>
