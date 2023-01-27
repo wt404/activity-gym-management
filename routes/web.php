@@ -23,3 +23,4 @@ Route::post('/{id}', [MemberController::class, 'update'])->name('member.update')
 Route::post('/{id}/destroy', [MemberController::class, 'destroy'])->name('member.destroy');
 
 Route::get('/{id}/trainer', [MemberController::class, 'showTrainer'])->name('member.trainer');
+Route::get('/{id}/membership', [MemberController::class, 'showMembership'])->name('member.membership');
