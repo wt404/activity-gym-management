@@ -51,8 +51,13 @@ class MemberController extends Controller
 
     public function edit(Request $request)
     {
+        $trainers = Trainer::all();
+        $memberships = Membership::all();
         $member = Member::findOrFail($request->id);
-        return view('edit')->with('member', $member);
+        return view('edit')
+            ->with('member', $member)
+            ->with('trainers', $trainers)
+            ->with('memberships', $memberships);
     }
 
     public function update(Request $request)
