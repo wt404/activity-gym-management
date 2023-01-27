@@ -37,22 +37,22 @@
                             <input type="email" class="form-control" id="email" name="email" value="{{ $member->email }}" disabled>
                         </div>
                         <div class="mb-3">
-                            <label for="trainer" class="form-label">
-                                Trainer
-                            </label>
-                            <select class="form-select" name="trainer_id">
-                                @foreach ($trainers as $trainer)
-                                    <option {{ $member->trainer_id == $trainer->id ? 'selected' : '' }} value="{{ $trainer->id }}">{{ $trainer->name }} - {{ $trainer->specialization }}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                        <div class="mb-3">
                             <label for="membership_type" class="form-label">
                                 Membership Type
                             </label>
                             <select class="form-select" name="membership_id">
                                 @foreach ($memberships as $membership)
                                     <option {{ $member->membership_id == $membership->id ? 'selected' : '' }} value="{{ $membership->id }}">{{ $membership->membership_type }} - {{ $membership->membership_price }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="trainer" class="form-label">
+                                Trainer
+                            </label>
+                            <select class="form-select" name="trainer_id">
+                                @foreach ($trainers as $trainer)
+                                    <option {{ $member->trainer_id == $trainer->id ? 'selected' : '' }} value="{{ $trainer->id }}">{{ $trainer->name }} - {{ $trainer->specialization }}</option>
                                 @endforeach
                             </select>
                         </div>

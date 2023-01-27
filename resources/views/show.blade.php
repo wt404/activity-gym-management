@@ -25,16 +25,13 @@
                         Email: {{ $member->email }}
                     </p>
                     <p>
-                        Membership Type: {{ $member->membership_type }}
+                        Membership Type: <a href={{ route('member.membership', $member->id) }}>{{ $member->membership->membership_type }}</a>
                     </p>
                     <p>
                         Membership Expiration: {{ $member->membership_expiration }}
                     </p>
                     <p>
                         Trainer: <a href={{ route('member.trainer', $member->id) }}>{{ $member->trainer->name }}</a>
-                    </p>
-                    <p>
-                        Membership Type: <a href={{ route('member.membership', $member->id) }}>{{ $member->membership->membership_type }}</a>
                     </p>
                     <a href={{ route('member.edit', $member->id) }} class="btn btn-primary">Edit</a>
                 </div>
