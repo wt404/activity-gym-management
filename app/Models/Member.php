@@ -12,8 +12,9 @@ class Member extends Model
     protected $fillable = [
         'name',
         'email',
-        'membership_type',
         'membership_expiration',
+        'trainer_id',
+        'membership_id',
     ];
 
     public function trainer()
