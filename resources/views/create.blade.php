@@ -10,6 +10,15 @@
                 <a href={{ route('member.index') }} class="btn btn-light">Go Back</a>
             </div>
         </div>
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         <div>
             <div class="card text-black">
                 <div class="card-body">
@@ -19,13 +28,13 @@
                             <label for="name" class="form-label">
                                 Name
                             </label>
-                            <input type="text" class="form-control" id="name" name="name">
+                            <input type="text" class="form-control" id="name" name="name" value="{{ old('name') }}">
                         </div>
                         <div class="mb-3">
                             <label for="email" class="form-label">
                                 Email
                             </label>
-                            <input type="email" class="form-control" id="email" name="email">
+                            <input type="email" class="form-control" id="email" name="email" value="{{ old('email') }}">
                         </div>
                         <div class="mb-3">
                             <label for="membership_type" class="form-label">
