@@ -37,7 +37,7 @@
                         <td>{{ $member->membership_expiration }}</td>
                         <td>
                             <div class="d-flex gap-2">
-                                <a href="#" class="btn btn-primary">Edit</a>
+                                <a href={{ route('member.show', $member->id) }} class="btn btn-primary">View</a>
                                 <a href="#" class="btn btn-danger">Delete</a>
                             </div>
                         </td>
