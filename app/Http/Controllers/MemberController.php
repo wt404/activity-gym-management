@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Member;
+use App\Models\Membership;
+use App\Models\Trainer;
 use DateTime;
 use Illuminate\Http\Request;
 
@@ -16,7 +18,11 @@ class MemberController extends Controller
 
     public function create(Request $request)
     {
-        return view('create');
+        $trainers = Trainer::all();
+        $memberships = Membership::all();
+        return view('create')
+            ->with('trainers', $trainers)
+            ->with('memberships', $memberships);
     }
 
     public function store(Request $request)
